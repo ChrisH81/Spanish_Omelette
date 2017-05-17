@@ -160,7 +160,7 @@ loop do
     { description: "Add onion to the pan", action: "generic_recipe_step" },
     { description: "Strain potatoes and onions", action: "generic_recipe_step" },
     { description: "Break the eggs", action: "break_eggs" },
-    { description: "Drink Some beer!", action: "generic_recipe_step" },
+    { description: "Drink Some beer!", action: "beer_step" },
     { description: "Beat the eggs", action: "generic_recipe_step" },
     { description: "Stir into the potatoes into the bowl with the salt", action: "generic_recipe_step" },
     { description: "Heat a little of the oil in a smaller pan", action: "generic_recipe_step" },
@@ -182,7 +182,12 @@ loop do
   puts ""
 
   def generic_recipe_step
-  puts "#{@global_name}, you can do this!"
+  puts "you can do this!"
+  print_progress_bar
+end
+
+def beer_step
+  puts "#{@global_name}, drink!!!"
   print_progress_bar
 end
 
