@@ -22,18 +22,18 @@ ingredients = [
 ]
 
 
-
+name = "Chris"
 time = Time.new
 
 puts ""
 
 case
 when time.hour <= 11
-  print "Good morning. Want to make some breakfast?"
+  print "Good morning #{name}. Want to make some breakfast? (y/n): "
 when time.hour >= 12 && time.hour < 18
-  print "Good afternoon. Want to make some lunch?"
+  print "Good afternoon #{name}. Want to make some lunch? (y/n): "
 when time.hour >= 18
-  print "Good evening. Want to make some dinner?"
+  print "Good evening #{name}. Want to make some dinner? (y/n): "
 end
 answer = gets.chomp.upcase
 
