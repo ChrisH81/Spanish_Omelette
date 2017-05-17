@@ -5,10 +5,11 @@ def print_divider
 end
 
 def print_progress_bar
-  3.times { sleep 0.5; print "." }
+  3.times { sleep 0.3; print "." }
   puts "\n"
 end
 
+#--- Items
 
 NUM_POTATOES = 3
 NUM_EGGS = 4
@@ -21,6 +22,7 @@ ingredients = [
   { name: 'salt', quantity: 'A pinch of' },
 ]
 
+#--- Greeting
 
 name = "Chris"
 time = Time.new
@@ -43,6 +45,9 @@ if answer == "N"
   puts ""
   exit
 else
+puts "\n"
+print "Great. Let me choose something for you"
+print_progress_bar
 puts "\n"
 puts "*    Let's cook a Spanish Omelette!    *"
 print_divider
@@ -175,8 +180,6 @@ loop do
 
   puts ""
 
-  print_divider
-
   def generic_recipe_step
   puts "On it!"
   print_progress_bar
@@ -224,6 +227,7 @@ def ask_if_ready(step, index)
 end
 
 steps.each_with_index do |step, index|
+  puts ""
   print_divider
 
   loop do
@@ -239,6 +243,16 @@ end
 
 print_divider
 
-puts "I hope you enjoy your omelette. Bon appetit!"
+puts "I hope you enjoy your omelette, #{name}. Bon appetit!"
 puts ""
+
+case
+when time.hour <= 11
+  puts "Enjoy your day coding!"
+when time.hour >= 12 && time.hour < 17
+  puts "Enjoy the rest of your afternoon! Make sure to get some coding in."
+when time.hour >= 17
+  puts "Enjoy the rest of your evening! Maybe get some rest so you can be a code ninja tomorrow."
+end
+
 end
