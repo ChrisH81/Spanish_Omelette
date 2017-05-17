@@ -38,6 +38,9 @@ end
 answer = gets.chomp.upcase
 
 if answer == "N"
+  puts ""
+  puts "OK. Well enjoy your day then!"
+  puts ""
   exit
 else
 puts "\n"
@@ -60,6 +63,76 @@ loop do
   if answer == 'N'
     puts "\n"
     print "Better go shopping before you start then."
+
+    puts ""
+
+      print "Will you be going shopping today?: "
+      answer = gets.chomp
+      if answer == "no" || answer == "n"
+        puts ""
+        puts "Alright then. Have a good day"
+        puts ""
+      elsif answer == "yes" || answer == "y"
+        then
+        puts ""
+    def create_list
+      print "Let's make a list so you don't forget anything. What is the list name?: "
+      name = gets.chomp
+
+      hash = {"name" => name, "items" => Array.new}
+       return hash
+    end
+
+    def add_list_item
+
+      print "What is the item called?: "
+      item_name = gets.chomp
+
+    puts ""
+
+      print "How much do you want?: "
+      quantity = gets.chomp.to_i
+    puts ""
+      hash = {"name" => item_name, "quantity" => quantity}
+      return hash
+    end
+
+
+    def print_separator(character="-")
+      puts character * 80
+    end
+
+    def print_list(list)
+      puts "\t\t\tList: #{list['name']}"
+      print_separator()
+
+    list["items"].each do |item|
+      puts "\tItem: " + item['name'] + "\t\t\t" +
+         "Quantity: " + item['quantity'].to_s
+
+      end
+    print_separator()
+    end
+
+    list = create_list()
+    puts ""
+    puts "Great. Add some items to the #{list ['name'].downcase} list."
+    puts answer = ""
+    until answer == "n" || answer == "no" || answer == "no thanks" || answer == "nah" do
+    list['items'].push(add_list_item())
+    print "Do you want to add more items to your list?: "
+    answer = gets.chomp
+    puts ""
+    end
+
+    puts ""
+
+    puts "Here's your list:\n"
+
+    print_list(list)
+
+    end
+
     print_progress_bar
   elsif answer == 'Y'
     puts "\n"
@@ -80,6 +153,7 @@ loop do
     { description: "Add onion to the pan", action: "generic_recipe_step" },
     { description: "Strain potatoes and onions", action: "generic_recipe_step" },
     { description: "Break the eggs", action: "break_eggs" },
+    { description: "Drink Some beer!", action: "generic_recipe_step" },
     { description: "Beat the eggs", action: "generic_recipe_step" },
     { description: "Stir into the potatoes into the bowl with the salt", action: "generic_recipe_step" },
     { description: "Heat a little of the oil in a smaller pan", action: "generic_recipe_step" },
