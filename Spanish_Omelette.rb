@@ -21,6 +21,25 @@ ingredients = [
   { name: 'salt', quantity: 'A pinch of' },
 ]
 
+
+
+time = Time.new
+
+puts ""
+
+case
+when time.hour <= 11
+  print "Good morning. Want to make some breakfast?"
+when time.hour >= 12 && time.hour < 18
+  print "Good afternoon. Want to make some lunch?"
+when time.hour >= 18
+  print "Good evening. Want to make some dinner?"
+end
+answer = gets.chomp.upcase
+
+if answer == "N"
+  exit
+else
 puts "\n"
 puts "*    Let's cook a Spanish Omelette!    *"
 print_divider
@@ -141,4 +160,9 @@ steps.each_with_index do |step, index|
   end
 
   send(step[:action])
+end
+
+print_divider
+
+puts "I hope you enjoy your omelette. Bon appetit!"
 end
