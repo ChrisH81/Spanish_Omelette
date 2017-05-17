@@ -32,9 +32,9 @@ puts ""
 case
 when time.hour <= 11
   print "Good morning #{name}. Want to make some breakfast? (y/n): "
-when time.hour >= 12 && time.hour < 18
+when time.hour >= 12 && time.hour < 17
   print "Good afternoon #{name}. Want to make some lunch? (y/n): "
-when time.hour >= 18
+when time.hour >= 17
   print "Good evening #{name}. Want to make some dinner? (y/n): "
 end
 answer = gets.chomp.upcase
@@ -91,7 +91,7 @@ loop do
 
     def add_list_item
 
-      print "What is the item called?: "
+      print "Add an item to the list: "
       item_name = gets.chomp
 
     puts ""
@@ -254,5 +254,5 @@ when time.hour >= 12 && time.hour < 17
 when time.hour >= 17
   puts "Enjoy the rest of your evening! Maybe get some rest so you can be a code ninja tomorrow."
 end
-
+puts "\n"
 end
