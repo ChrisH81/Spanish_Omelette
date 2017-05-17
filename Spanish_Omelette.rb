@@ -64,14 +64,15 @@ loop do
     puts "\n"
     print "Better go shopping before you start then."
 
-    puts ""
-
+    puts "\n"
+    puts "\n"
       print "Will you be going shopping today?: "
       answer = gets.chomp
       if answer == "no" || answer == "n"
         puts ""
-        puts "Alright then. Have a good day"
+        puts "Alright then. Looks like you won't be having anything to eat today. Good luck with that!"
         puts ""
+        exit
       elsif answer == "yes" || answer == "y"
         then
         puts ""
@@ -239,4 +240,5 @@ end
 print_divider
 
 puts "I hope you enjoy your omelette. Bon appetit!"
+puts ""
 end
