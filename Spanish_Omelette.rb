@@ -181,7 +181,7 @@ loop do
   puts ""
 
   def generic_recipe_step
-  puts "On it!"
+  puts "#{name}, you can do this!"
   print_progress_bar
 end
 
