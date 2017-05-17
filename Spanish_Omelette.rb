@@ -25,6 +25,7 @@ ingredients = [
 #--- Greeting
 
 name = "Chris"
+@global_name = "Chris"
 time = Time.new
 
 puts ""
@@ -181,7 +182,7 @@ loop do
   puts ""
 
   def generic_recipe_step
-  puts "#{name}, you can do this!"
+  puts "#{@global_name}, you can do this!"
   print_progress_bar
 end
 
